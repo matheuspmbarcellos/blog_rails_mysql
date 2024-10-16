@@ -1,0 +1,19 @@
+<div class="container mt-5">
+  <!-- Título do post -->
+  <h1 class="text-center mb-4"><%= @post.title %></h1>
+
+  <!-- Data de publicação -->
+  <div class="text-center mb-3">
+    <small class="text-muted">Publicado em: <%= @post.date_published.strftime('%d %B %Y') %></small>
+  </div>
+
+  <!-- Conteúdo do post -->
+  <div class="post-body">
+    <%= raw @post.body %>
+  </div>
+
+  <!-- Link para voltar para a página inicial ou lista de posts -->
+  <div class="mt-5 text-center">
+    <%= link_to "Voltar", root_path, class: "btn btn-secondary" %>
+  </div>
+</div>

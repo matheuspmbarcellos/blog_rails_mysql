@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   end
 
   root "blog#index"
+  get '/search', to: 'blog#search'
+  get '/:id', to: 'blog#show', as: "blog_post"
 end
