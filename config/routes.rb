@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
   scope '/admin' do 
-    get '/', to: "posts#index"
+    get '/', to: "posts#index", as: "admin_posts"
     resources :posts
   end
 
   root "blog#index"
   get '/search', to: 'blog#search'
-  get '/:id', to: 'blog#show', as: "blog_post"
+  get '/about', to: 'blog#about'
+  get '/posts/:id', to: 'blog#show', as: "blog_post"
 end

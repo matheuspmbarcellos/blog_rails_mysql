@@ -5,8 +5,13 @@
   </p>
 
   <p>
+    <strong>Body:</strong>
+    <%= truncate_html(post.body, 100) %>
+  </p>
+
+  <p>
     <strong>Date published:</strong>
-    <%= post.date_published %>
+    <%= post.published_at %>
   </p>
 
 </div>

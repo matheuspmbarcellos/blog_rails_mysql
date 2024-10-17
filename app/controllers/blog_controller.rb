@@ -2,7 +2,7 @@ class BlogController < ApplicationController
   layout "blog"
   
   def index
-    @posts = Post.where('date_published <= ?', Time.zone.now).order("date_published desc")
+    @posts = Post.where('published_at <= ?', Time.zone.now).order("published_at desc")
   end
 
   def search
@@ -17,4 +17,6 @@ class BlogController < ApplicationController
   def show
     @post = Post.find(params[:id])
   end
+
+  def about;end
 end

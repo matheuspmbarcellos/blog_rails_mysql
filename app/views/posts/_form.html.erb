@@ -17,13 +17,23 @@
   </div>
 
   <div>
+    <%= form.label :img_url, style: "display: block" %>
+    <%= form.text_field :img_url %>
+  </div>
+
+  <div>
+    <%= form.label :styles_css, style: "display: block" %>
+    <%= form.text_area :styles_css %>
+  </div>
+
+  <div>
     <%= form.label :body, style: "display: block" %>
     <%= form.text_area :body %>
   </div>
 
   <div>
-    <%= form.label :date_published, style: "display: block" %>
-    <%= form.datetime_field :date_published %>
+    <%= form.label :published_at, style: "display: block" %>
+    <%= form.datetime_field :published_at %>
   </div>
 
   <div>

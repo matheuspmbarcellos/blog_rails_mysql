@@ -15,7 +15,7 @@ class PostsTest < ApplicationSystemTestCase
     click_on "New post"
 
     fill_in "Body", with: @post.body
-    fill_in "Date published", with: @post.date_published
+    fill_in "Date published", with: @post.published_at
     fill_in "Title", with: @post.title
     click_on "Create Post"
 
@@ -28,7 +28,7 @@ class PostsTest < ApplicationSystemTestCase
     click_on "Edit this post", match: :first
 
     fill_in "Body", with: @post.body
-    fill_in "Date published", with: @post.date_published
+    fill_in "Date published", with: @post.published_at
     fill_in "Title", with: @post.title
     click_on "Update Post"
 
