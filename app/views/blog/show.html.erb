@@ -1,14 +1,4 @@
 <div class="container mx-auto mt-5">
-  <!-- Estilos específicos do post -->
-  <% if @post.styles_css.present? %>
-    <style>
-      /* Adicione um seletor para que os estilos se apliquem apenas ao conteúdo do post */
-      .post-body {
-        <%= raw @post.styles_css %>
-      }
-    </style>
-  <% end %>
-
   <!-- Imagem do post, se houver, com tamanho reduzido -->
   <% if @post.img_url.present? %>
     <div class="text-center mb-4">
