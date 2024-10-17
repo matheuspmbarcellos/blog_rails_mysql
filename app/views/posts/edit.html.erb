@@ -1,10 +1,9 @@
-<h1>Editing post</h1>
+<h1 class="text-2xl font-bold mb-4">Editing Post</h1>
 
 <%= render "form", post: @post %>
 
 <br>
 
-<div>
-  <%= link_to "Show this post", @post %> |
-  <%= link_to "Back to posts", posts_path %>
+<div class="flex justify-start space-x-4 mb-4">
+  <%= link_to "Voltar", posts_path, class: "bg-gray-300 text-gray-700 px-4 py-2 rounded hover:bg-gray-400 transition" %>
 </div>

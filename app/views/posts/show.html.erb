@@ -1,10 +1,20 @@
-<p style="color: green"><%= notice %></p>
+<% if notice %>
+  <p id="notice" class="bg-green-500 text-white text-center py-2"><%= notice %></p>
+<% end %>
 
 <%= render @post %>
 
-<div>
-  <%= link_to "Edit this post", edit_post_path(@post) %> |
-  <%= link_to "Back to posts", posts_path %>
-
-  <%= button_to "Destroy this post", @post, method: :delete %>
+<div class="flex justify-start space-x-4 mb-4">
+  <%= link_to "Voltar", posts_path, class: "bg-gray-300 text-gray-700 px-4 py-2 rounded hover:bg-gray-400 transition" %>
+  <%= link_to "Editar", edit_post_path(@post), class: "bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition" %>
+  <%= button_to "Deletar", @post, method: :delete, class: "bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transition" %>
 </div>
+
+<script>
+  setTimeout(function() {
+    const notice = document.getElementById('notice');
+    if (notice) {
+      notice.style.display = 'none';
+    }
+  }, 5000);
+</script>
