@@ -13,3 +13,6 @@
  *= require_tree .
  *= require_self
  */
+ * {
+    transition: all 0.4s ease-in-out;
+  }
