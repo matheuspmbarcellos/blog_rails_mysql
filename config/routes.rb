@@ -1,12 +1,10 @@
 Rails.application.routes.draw do
-  devise_for :users
-  scope '/admin' do 
-    get '/', to: "posts#index", as: "admin_posts"
-    resources :posts
-  end
+  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  root "blog#index"
-  get '/search', to: 'blog#search'
-  get '/about', to: 'blog#about'
-  get '/posts/:id', to: 'blog#show', as: "blog_post"
+  # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
+  # Can be used by load balancers and uptime monitors to verify that the app is live.
+  get "up" => "rails/health#show", as: :rails_health_check
+
+  # Defines the root path route ("/")
+  # root "posts#index"
 end
