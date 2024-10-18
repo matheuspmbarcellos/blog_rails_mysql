@@ -1,0 +1,16 @@
+<div id="<%= dom_id post %>" class="bg-white p-4 rounded-lg shadow mb-4">
+
+  <div class="h-48 w-full overflow-hidden rounded mb-2">
+    <img src="<%= post.img_url %>" alt="Imagem do post" class="w-full h-full object-cover" />
+  </div>
+
+  <p class="font-bold">
+    <strong>Título:</strong>
+    <%= post.title %>
+  </p>
+
+  <p class="text-gray-500">
+    <strong>Publicação:</strong>
+    <%= post.published_at.strftime('%d %B %Y') %>
+  </p>
+</div>

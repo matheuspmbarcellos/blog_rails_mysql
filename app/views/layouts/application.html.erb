@@ -1,15 +1,33 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>BlogRailsMysql</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyBlog - Admin</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_include_tag 'application', 'data-turbo-track': 'reload' %>
+    <!-- Tailwind CSS via CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   </head>
 
-  <body>
-    <%= yield %>
+  <body class="bg-gray-100">
+    <nav class="bg-gray-800 p-4 shadow">
+      <div class="container mx-auto flex justify-between items-center">
+        <div class="flex items-center">
+          <a class="text-white text-xl font-bold mr-4" href="/admin">MyBlog - Admin</a>
+        </div>
+        <div>
+          <%= link_to 'Acessar Blog', root_path, class: "text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded" %>
+        </div>
+      </div>
+    </nav>
+       
+
+    <div class="container mx-auto my-4">
+      <%= yield %>
+    </div>
+
   </body>
 </html>
