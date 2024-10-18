@@ -1,0 +1,38 @@
+<%= form_with(model: post, local: true) do |form| %>
+  <% if post.errors.any? %>
+    <div class="mb-4 p-4 bg-red-100 border border-red-400 text-red-700 rounded">
+      <h2 class="font-bold"><%= pluralize(post.errors.count, "erro") %> impediram que este post fosse salvo:</h2>
+      <ul class="list-disc list-inside">
+        <% post.errors.full_messages.each do |message| %>
+          <li><%= message.split('-', 2).last %></li> <!-- Mostra apenas a mensagem sem o nome do campo -->
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+
+  <div class="mb-4">
+    <%= form.label :title, "Título", class: "block font-medium mb-1" %>
+    <%= form.text_field :title, class: "border border-gray-300 rounded-lg w-full px-3 py-2" %>
+  </div>
+
+  <div class="mb-4">
+    <%= form.label :img_url, "URL da Imagem", class: "block font-medium mb-1" %>
+    <%= form.text_field :img_url, class: "border border-gray-300 rounded-lg w-full px-3 py-2" %>
+  </div>
+
+  <div class="mb-4">
+    <%= form.label :body, "Conteúdo (HTML + Tailwind)", class: "block font-medium mb-1" %>
+    <%= form.text_area :body, class: "border border-gray-300 rounded-lg w-full px-3 py-2", rows: 6 %>
+  </div>
+
+  <div class="mb-4">
+    <%= form.label :published_at, "Data de Publicação", class: "block font-medium mb-1" %>
+    <%= form.datetime_field :published_at, class: "border border-gray-300 rounded-lg w-full px-3 py-2" %>
+  </div>
+
+  <div>
+    <%= form.submit "Salvar", class: "bg-green-500 text-white rounded-lg px-4 py-2 hover:bg-green-600 transition" %>
+  </div>
+<% end %>
