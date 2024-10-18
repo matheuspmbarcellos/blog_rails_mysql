@@ -1,18 +1,20 @@
 <div class="container mx-auto mt-5">
-  <!-- Imagem do post, se houver, com tamanho reduzido -->
-  <% if @post.img_url.present? %>
-    <div class="text-center mb-4">
-      <%= image_tag @post.img_url, class: "mx-auto rounded-lg", style: "max-width: 300px;", alt: @post.title %>
-    </div>
-  <% end %>
 
   <!-- Título do post -->
   <h1 class="text-center text-3xl font-bold mb-4"><%= @post.title %></h1>
-
+  
   <!-- Data de publicação -->
   <div class="text-center mb-3">
     <small class="text-gray-500">Publicado em: <%= @post.published_at.strftime('%d %B %Y') %></small>
   </div>
+
+  <!-- Imagem do post, se houver, com tamanho aumentado e responsivo -->
+  <% if @post.img_url.present? %>
+    <div class="text-center mb-4">
+      <%= image_tag @post.img_url, class: "mx-auto rounded-lg max-w-lg w-full", alt: @post.title %>
+    </div>
+  <% end %>
+
 
   <!-- Conteúdo do post -->
   <div class="post-body">

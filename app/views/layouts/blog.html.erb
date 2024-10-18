@@ -6,6 +6,7 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_include_tag 'application', 'data-turbo-track': 'reload' %>
     <!-- Tailwind CSS via CDN -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   </head>
@@ -34,7 +35,7 @@
           <div class="hidden md:flex md:items-center md:space-x-4">
             <%= link_to 'Início', root_path, class: "text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium #{'bg-gray-900 text-white' if current_page?(root_path)}" %>
             <%= link_to 'Sobre', about_path, class: "text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium #{'bg-gray-900 text-white' if current_page?(about_path)}" %>
-            <%= link_to 'Área do administrador', admin_posts_path, class: "text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium border border-gray-300", target: "_blank" %>
+            <%= link_to 'Área do administrador', new_user_session_path, class: "text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium border border-gray-300" %>
           </div>
 
           <!-- Formulário de busca Rails -->
@@ -54,7 +55,7 @@
         <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
           <%= link_to 'Início', root_path, class: "text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium #{'bg-gray-900 text-white' if current_page?(root_path)}" %>
           <%= link_to 'Sobre', about_path, class: "text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium #{'bg-gray-900 text-white' if current_page?(about_path)}" %>
-          <%= link_to 'Área do administrador', admin_posts_path, class: "text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium border border-gray-300", target: "_blank" %>
+          <%= link_to 'Área do administrador', admin_posts_path, class: "text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium border border-gray-300" %>
 
           <!-- Formulário de busca para versão mobile -->
           <div class="mt-3">

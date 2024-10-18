@@ -4,7 +4,7 @@
       <h2 class="font-bold"><%= pluralize(post.errors.count, "erro") %> impediram que este post fosse salvo:</h2>
       <ul class="list-disc list-inside">
         <% post.errors.full_messages.each do |message| %>
-          <li><%= message.split(' ', 3).last %></li> <!-- Mostra apenas a mensagem sem o nome do campo -->
+          <li><%= message.split('-', 2).last %></li> <!-- Mostra apenas a mensagem sem o nome do campo -->
         <% end %>
       </ul>
     </div>
